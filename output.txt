@@ -1,0 +1,72 @@
+Using the default profile...
+Feature: Forgot Password
+  If the user forgets password send him a new password
+
+  Scenario: Successful Forgot Password                               # features\ForgotPassword.feature:4
+    Given I'm on the Forgot Password page                            # features/step_definitions/ForgotPassword_steps.rb:1
+    When I fill in the form and submit the correct email of the user # features/step_definitions/ForgotPassword_steps.rb:5
+    Then I should go back to the Login Page                          # features/step_definitions/ForgotPassword_steps.rb:10
+
+  Scenario: No Value entered in Forgot Password                # features\ForgotPassword.feature:9
+    Given I'm on the Forgot Password page                      # features/step_definitions/ForgotPassword_steps.rb:1
+    When I fill in the form and submit empty email of the user # features/step_definitions/ForgotPassword_steps.rb:14
+    Then forgot password page should have notice message       # features/step_definitions/ForgotPassword_steps.rb:19
+      Failed assertion, no message given. (MiniTest::Assertion)
+      ./features/step_definitions/ForgotPassword_steps.rb:20:in `/^forgot password page should have notice message$/'
+      features\ForgotPassword.feature:12:in `Then forgot password page should have notice message'
+
+  Scenario: Wrong Value entered in Forgot Password             # features\ForgotPassword.feature:14
+    Given I'm on the Forgot Password page                      # features/step_definitions/ForgotPassword_steps.rb:1
+    When I fill in the form and submit wrong email of the user # features/step_definitions/ForgotPassword_steps.rb:23
+    Then forgot password page should display notice message    # features/step_definitions/ForgotPassword_steps.rb:28
+      Failed assertion, no message given. (MiniTest::Assertion)
+      ./features/step_definitions/ForgotPassword_steps.rb:29:in `/^forgot password page should display notice message$/'
+      features\ForgotPassword.feature:17:in `Then forgot password page should display notice message'
+
+Feature: signup
+  In order to sign up as a new user
+
+  Scenario: Successful signup                                                 # features\SignUp.feature:4
+    Given I'm on the signup page                                              # features/step_definitions/signup_steps.rb:1
+    When I fill in the form and submit the correct signup details of the user # features/step_definitions/signup_steps.rb:5
+    Then I should see the users info                                          # features/step_definitions/signup_steps.rb:14
+
+  Scenario: No Value entered in email field                            # features\SignUp.feature:9
+    Given I'm on the signup page                                       # features/step_definitions/signup_steps.rb:1
+    When I fill in the form and submit empty email details of the user # features/step_definitions/signup_steps.rb:18
+    Then Signup page should display notice message                     # features/step_definitions/signup_steps.rb:27
+
+  Scenario: Password not given                        # features\SignUp.feature:14
+    Given I'm on the signup page                      # features/step_definitions/signup_steps.rb:1
+    When I fill in the form and submit empty password # features/step_definitions/signup_steps.rb:31
+    Then Signup page should have notice message       # features/step_definitions/signup_steps.rb:40
+
+Feature: Login
+  In order to login into our application
+
+  Scenario: Loggedin                                                         # features\login.feature:4
+    Given I'm on the login page                                              # features/step_definitions/login_steps.rb:1
+    When I fill in the form and submit the correct login details of the user # features/step_definitions/login_steps.rb:5
+    Then I should see the users homepage                                     # features/step_definitions/login_steps.rb:11
+      Failed assertion, no message given. (MiniTest::Assertion)
+      ./features/step_definitions/login_steps.rb:12:in `/^I should see the users homepage$/'
+      features\login.feature:7:in `Then I should see the users homepage'
+
+  Scenario: Not Loggedin                                                          # features\login.feature:9
+    Given I'm on the login page                                                   # features/step_definitions/login_steps.rb:1
+    When I fill in the form and submit the incorrect username details of the user # features/step_definitions/login_steps.rb:15
+    Then page should display notice message                                       # features/step_definitions/login_steps.rb:21
+
+  Scenario: Not Loggedin password                                                 # features\login.feature:14
+    Given I'm on the login page                                                   # features/step_definitions/login_steps.rb:1
+    When I fill in the form and submit the incorrect password details of the user # features/step_definitions/login_steps.rb:25
+    Then page should have notice message                                          # features/step_definitions/login_steps.rb:31
+
+Failing Scenarios:
+cucumber features\ForgotPassword.feature:9 # Scenario: No Value entered in Forgot Password
+cucumber features\ForgotPassword.feature:14 # Scenario: Wrong Value entered in Forgot Password
+cucumber features\login.feature:4 # Scenario: Loggedin
+
+9 scenarios (3 failed, 6 passed)
+27 steps (3 failed, 24 passed)
+0m1.754s

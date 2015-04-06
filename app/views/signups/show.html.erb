@@ -1,0 +1,38 @@
+<center>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @signup.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @signup.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @signup.email_id %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @signup.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @signup.password %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @signup.dob %>
+</p>
+
+<h4>
+<%= link_to 'Edit', edit_signup_path(@signup) %> |
+<%= link_to 'Login', '/' %>
+</h4>
+</center>

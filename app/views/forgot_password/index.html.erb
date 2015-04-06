@@ -1,0 +1,19 @@
+<center>
+<h1>Forgot Password</h1>
+
+  <p>Don't worry! Just fill in your e-mail address <br/>and we will send you a temporary password. 
+  </p>
+
+
+  <%= form_for :login, url: login_index_path do |f| %>
+  <p>
+    <%= f.label :"Email Address" %><br>
+    <%= f.text_field :email %>
+  </p>
+ 
+    <%= f.submit :"Get Password" %>
+  </p>
+<% end %>
+
+<%= link_to "Go back to login page?", login_index_path %>
+</center>

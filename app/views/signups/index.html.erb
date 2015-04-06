@@ -1,0 +1,35 @@
+<center>
+<h3>List of Users</h3>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Dob</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @signups.each do |signup| %>
+  <tr>
+    <td><%= signup.first_name %></td>
+    <td><%= signup.last_name %></td>
+    <td><%= signup.email_id %></td>
+    <td><%= signup.username %></td>
+    <td><%= signup.password %></td>
+    <td><%= signup.dob %></td>
+    <td><%= link_to 'Show', signup %></td>
+    <td><%= link_to 'Edit', edit_signup_path(signup) %></td>
+    <td><%= link_to 'Destroy', signup, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User?', register_path %>
+</center>

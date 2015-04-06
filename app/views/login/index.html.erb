@@ -1,0 +1,24 @@
+<center>
+	<h1>Login Page</h1>
+
+	<%= form_for :login_validate, :url => {:action => "validate", :id => @login} do |f| %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+ 
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </p>
+
+ <p>
+    <%= f.submit :login %>
+  </p>
+<% end %>
+
+<%= link_to "Forgot Password? Click Here!", forgot_password_path %><br/>
+<%= link_to "New User? Sign Up Here!", register_path %>
+
+</center>
+
