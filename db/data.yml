@@ -9,29 +9,6 @@ schema_migrations:
   - - '20150406012151'
 
 ---
-user_informations:
-  columns:
-  - id
-  - username
-  - email_id
-  - password
-  - first_name
-  - last_name
-  - dob
-  - created_at
-  - updated_at
-  records: 
-  - - 1
-    - shashank1601
-    - shashank1601@gmail.com
-    - shashank1601
-    - shashank
-    - vadlamani
-    - '2015-01-16'
-    - '2015-04-06 00:36:35.702636'
-    - '2015-04-06 00:42:11.627043'
-
----
 signups:
   columns:
   - id
