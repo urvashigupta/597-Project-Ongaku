@@ -1,0 +1,73 @@
+
+---
+schema_migrations:
+  columns:
+  - version
+  records: 
+  - - '20150405215028'
+  - - '20150405234529'
+  - - '20150406012151'
+
+---
+user_informations:
+  columns:
+  - id
+  - username
+  - email_id
+  - password
+  - first_name
+  - last_name
+  - dob
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - shashank1601
+    - shashank1601@gmail.com
+    - shashank1601
+    - shashank
+    - vadlamani
+    - '2015-01-16'
+    - '2015-04-06 00:36:35.702636'
+    - '2015-04-06 00:42:11.627043'
+
+---
+signups:
+  columns:
+  - id
+  - first_name
+  - last_name
+  - email_id
+  - username
+  - password
+  - dob
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - shashank
+    - vadlamani
+    - shashank1601@gmail.com
+    - shashank1601
+    - shashank1601
+    - '2015-04-06'
+    - '2015-04-06 01:44:00.803547'
+    - '2015-04-06 01:44:00.803547'
+  - - 13
+    - urva
+    - gupta
+    - urva.gupta@gmail.com
+    - urva.gupta
+    - urva.gupta
+    - '2015-04-06'
+    - '2015-04-06 06:15:38.697783'
+    - '2015-04-06 06:15:38.697783'
+  - - 14
+    - sdadsadd
+    - sadada
+    - adada
+    - adas
+    - adsasd
+    - '2015-04-06'
+    - '2015-04-06 07:31:17.334690'
+    - '2015-04-06 07:31:17.334690'

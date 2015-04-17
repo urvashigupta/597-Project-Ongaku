@@ -40,6 +40,7 @@ gem 'jquery-rails'
 # gems I added
 gem 'twitter-bootstrap-rails'
 gem 'coffee-script-source', '1.8.0'
+gem 'yaml_db_with_schema_tables'
 
 #gems for cucumber
 group :test, :development do
