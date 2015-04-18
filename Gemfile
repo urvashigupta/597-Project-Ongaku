@@ -41,6 +41,7 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'coffee-script-source', '1.8.0'
 gem 'yaml_db_with_schema_tables'
+gem 'sorcery'
 
 #gems for cucumber
 group :test, :development do
