@@ -5,10 +5,15 @@
   </p>
 
 
-  <%= form_for :login, url: login_index_path do |f| %>
+
+  <%= form_for :forgot_password_validate, :url => {:action => "validate"} do |f| %>
   <p>
-    <%= f.label :"Email Address" %><br>
-    <%= f.text_field :email %>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :email_id %><br>
+    <%= f.text_field :email_id %>
   </p>
  
     <%= f.submit :"Get Password" %>

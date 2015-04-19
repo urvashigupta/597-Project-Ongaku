@@ -15,9 +15,10 @@ MusicApp::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   match '/register' => 'signups#new', :as => :register
   match '/home/index' => 'home#index', :as => :home_index
-  match '/forgot_password/index' => 'forgot_password#index', :as => :forgot_password
   match '/login/index' => 'login#index', :as => :login_index
   match '/login/validate' => 'login#validate', :as => :login_validate
+  match '/forgot_password/index' => 'forgot_password#index', :as => :forgot_password
+  match '/forgot_password/validate' => 'forgot_password#validate', :as => :forgot_password_validate
   
   # Keep in mind you can assign values other than :controller and :action
 

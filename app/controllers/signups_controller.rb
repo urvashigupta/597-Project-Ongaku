@@ -44,6 +44,7 @@ class SignupsController < ApplicationController
 
     respond_to do |format|
       if @signup.save
+        ExampleMailer.new_user(@signup).deliver
         format.html { redirect_to @signup, notice: 'You were registered successfully.' }
         format.json { render json: @signup, status: :created, location: @signup }
       else
