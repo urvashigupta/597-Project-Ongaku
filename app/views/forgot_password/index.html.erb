@@ -1,22 +1,18 @@
 <center>
-<h1>Forgot Password</h1>
+<h1>Forgot Username or Password</h1>
 
-  <p>Don't worry! Just fill in your e-mail address <br/>and we will send you a temporary password. 
+  <p>Don't worry! Just fill in your e-mail address <br/>and we will send your details. 
   </p>
 
 
 
   <%= form_for :forgot_password_validate, :url => {:action => "validate"} do |f| %>
   <p>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </p>
-  <p>
     <%= f.label :email_id %><br>
     <%= f.text_field :email_id %>
   </p>
  
-    <%= f.submit :"Get Password" %>
+    <%= f.submit :"Get Information" %>
   </p>
 <% end %>
 

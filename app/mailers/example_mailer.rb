@@ -20,10 +20,11 @@ Team Ongaku'
     mg_client.send_message Figaro.env.domain, message_params
   end
 
-def forgot_pwd(user, email_id)
+def forgot_pwd(user)
   @user = user
     emailText = 'Hi ' + @user.first_name + ' ' + @user.last_name + ',
 
+Your username is: ' + @user.username + '
 Your password is: ' + @user.password + '
 Please change your password as soon as possible. 
 To login please go to: http://localhost:3000/
@@ -33,8 +34,8 @@ Thank you!
 Team Ongaku'
     mg_client = Mailgun::Client.new Figaro.env.api_key 
     message_params = {:from    => Figaro.env.gmail_username,
-                      :to      => email_id,
-                      :subject => 'Ongaku: Retrieve Password',
+                      :to      => @user.email_id,
+                      :subject => 'Ongaku: Your User Information',
                       :text    => emailText}
     mg_client.send_message Figaro.env.domain, message_params
   end
