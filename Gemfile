@@ -41,7 +41,6 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'coffee-script-source', '1.8.0'
 gem 'yaml_db_with_schema_tables'
-gem 'sorcery'
 
 # gems urva added
 gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'

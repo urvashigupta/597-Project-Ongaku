@@ -13,12 +13,31 @@
 
 ActiveRecord::Schema.define(:version => 20150418020417) do
 
+  create_table "authors", :force => true do |t|
+    t.string   "name"
+    t.string   "gender"
+    t.date     "dob"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "signups", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email_id"
     t.string   "username"
     t.string   "password"
+    t.date     "dob"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "user_informations", :force => true do |t|
+    t.string   "username"
+    t.string   "email_id"
+    t.string   "password"
+    t.string   "first_name"
+    t.string   "last_name"
     t.date     "dob"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
