@@ -1,5 +1,13 @@
 Given(/^I'm on the Forgot Password page$/) do
   visit(forgot_password_index_path)
+  @signup = Signup.create!({
+      :first_name => "sibi",
+      :last_name => "vijayakumar",
+      :email_id => "sibivkumar@gmail.com",
+      :username => "sibivkumar",
+      :password => "sibi123",
+      :dob => 2015-04-05
+             })
 end
 
 When(/^I fill in the form and submit the correct email of the user$/) do

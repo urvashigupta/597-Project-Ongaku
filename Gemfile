@@ -47,6 +47,7 @@ gem 'rockstar', '~> 0.8.1'
 gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 gem 'figaro'
 
+gem 'test-unit'
 #gems for cucumber: sibi
 group :test, :development do
   gem 'cucumber-rails', :require => false

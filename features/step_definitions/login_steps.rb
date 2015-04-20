@@ -1,10 +1,18 @@
 Given(/^I'm on the login page$/) do
   visit login_index_path
+  @signup = Signup.create!({
+      :first_name => "sibi",
+      :last_name => "vijayakumar",
+      :email_id => "sibivkumar@gmail.com",
+      :username => "sibivkumar",
+      :password => "sibi123",
+      :dob => 2015-04-05
+             })
 end
 
 When(/^I fill in the form and submit the correct login details of the user$/) do
-	fill_in 'login_validate_username', :with => "shashank1601"
-	fill_in 'login_validate_password', :with => "shashank1601"
+	fill_in 'login_validate_username', :with => "sibivkumar"
+	fill_in 'login_validate_password', :with => "sibi123"
 	click_button 'login'
 end
 

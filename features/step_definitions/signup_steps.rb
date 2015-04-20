@@ -4,9 +4,9 @@ end
 
 When(/^I fill in the form and submit the correct signup details of the user$/) do
 	fill_in 'signup_first_name', :with => "sibi"
-	fill_in 'signup_last_name', :with => "vijyakumar"
+	fill_in 'signup_last_name', :with => "vijayakumar"
 	fill_in 'signup_username', :with => "sibivkumar"
-	fill_in 'signup_email_id', :with => "sibi@gmail.com"
+	fill_in 'signup_email_id', :with => "sibivkumar@gmail.com"
 	fill_in 'signup_password', :with => "sibi123"
 	click_button 'Create Signup'
 end
@@ -17,7 +17,7 @@ end
 
 When(/^I fill in the form and submit empty email details of the user$/) do
 	fill_in 'signup_first_name', :with => "sibi"
-	fill_in 'signup_last_name', :with => "vijyakumar"
+	fill_in 'signup_last_name', :with => "vijayakumar"
 	fill_in 'signup_username', :with => "sibivkumar3223"
 	fill_in 'signup_email_id', :with => ""
 	fill_in 'signup_password', :with => "sibi123"
