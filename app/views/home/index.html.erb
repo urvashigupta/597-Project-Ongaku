@@ -3,11 +3,13 @@
         <h2>All music</h2>
         <p class="meta"><span class="count">0</span> <span class="text">songs</span></p>
     </div>
+    <form method="post">
     <div class="search" align="right">
-        <input id="search" type="text" placeholder="Find songs" />
-        <a href="#" class="clear">Clear</a>
+        <input id="searching" type="text" placeholder="Find songs" />
+        <input type="reset" value="Clear">
 		&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp<%= link_to "Logout?", logout_index_path %>
     </div>
+  </form>
 	
 </div>
 
