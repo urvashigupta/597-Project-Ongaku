@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(:version => 20150406012151) do
 
+  create_table "authors", :force => true do |t|
+    t.string   "name"
+    t.string   "gender"
+    t.date     "dob"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "signups", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -23,5 +31,26 @@ ActiveRecord::Schema.define(:version => 20150406012151) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "user_informations", :force => true do |t|
+    t.string   "username"
+    t.string   "email_id"
+    t.string   "password"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "dob"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",            :null => false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

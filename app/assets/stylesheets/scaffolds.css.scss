@@ -1,6 +1,6 @@
 body {
-  background-color: #787878;
-  color: #333;
+  background-color: #000000;
+  color: #cc0000;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -19,12 +19,12 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #0000ff;
   &:visited {
-    color: #666;
+    color: #0000ff;
   }
   &:hover {
-    color: #fff;
+    color: #000066;
     background-color: #000;
   }
 }
@@ -66,4 +66,8 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+.navbar-inner{
+	background-color: #cc0000;
 }

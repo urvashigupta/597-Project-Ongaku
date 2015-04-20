@@ -19,7 +19,7 @@ MusicApp::Application.routes.draw do
   match '/login/validate' => 'login#validate', :as => :login_validate
   match '/forgot_password/index' => 'forgot_password#index', :as => :forgot_password
   match '/forgot_password/validate' => 'forgot_password#validate', :as => :forgot_password_validate
-  
+  match '/logout/index' => 'logout#index', :as => :logout_index
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

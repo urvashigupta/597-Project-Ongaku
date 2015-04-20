@@ -3,13 +3,33 @@
         <h2>All music</h2>
         <p class="meta"><span class="count">0</span> <span class="text">songs</span></p>
     </div>
-    <div class="search">
+    <div class="search" align="right">
         <input id="search" type="text" placeholder="Find songs" />
-        <a href="#" class="clear">clear</a>
+        <a href="#" class="clear">Clear</a>
+		&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp<%= link_to "Logout?", logout_index_path %>
     </div>
+	
 </div>
 
 <div class="grid-container">
     <div id="slickgrid"></div>
 </div>
-<embed type="application/x-shockwave-flash" flashvars="audioUrl=MP3_FILE_URL" src="http://www.google.com/reader/ui/3523697345-audio-player.swf"  width="400" height="27" quality="best"></embed>
+<br/>
+<%= @album_name %>
+<br/>
+<%= @album_artist %>
+<br/>
+<%= @album_url %>
+<br/>
+<%= @album_release_date %>
+<br/>
+<br/>
+<br/>
+<br/>
+<div style="position:relative;width:800px;height:25px;overflow:hidden;">
+  <div style="position:absolute;top:-276px;left:-5px">
+    <iframe width="800" height="300" 
+      src="https://www.youtube.com/embed/I-SqFmhBUp4">
+    </iframe>
+  </div>
+</div>
