@@ -9,6 +9,7 @@ one:
   artist_name: MyString
   duration: MyString
   year: MyString
+  genre: MyString
 
 two:
   track_id: MyString
@@ -19,3 +20,4 @@ two:
   artist_name: MyString
   duration: MyString
   year: MyString
+  genre: MyString

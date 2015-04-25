@@ -9,10 +9,24 @@
           <%= f.text_field :find_songs %>
         </p>
 
-        <%= f.submit :"Search" %>
-        <!-- <br/> <br/> -->
+        <%= f.submit 'Search' %>
         <input type="reset" value="Clear">
         <br/> <br/>
+        <p>
+          <%= f.label :search_by_genre%>
+          <%= f.submit 'Pop' %>
+          <%= f.submit 'Hip-Hop' %>
+          <%= f.submit 'Rock' %>
+          <%= f.submit 'RnB' %>
+          <%= f.submit 'Alternative Rock' %>
+          <%= f.submit 'Country' %>
+          <%= f.submit 'Classical' %>
+          <%= f.submit 'Jazz' %>
+          <%= f.submit 'Reggae' %>
+          <%= f.submit 'Blues' %>
+        </p>
+
+        
         <%= link_to "Logout?", logout_index_path %>
         <%end%>
 </div>
@@ -25,6 +39,7 @@
   <tr>
     <th>Title</th>
     <th>Artist Name</th>
+    <th>Genre</th>
     <th>Duration</th>
     <th>Year</th>
   </tr>
@@ -32,6 +47,7 @@
   <tr>
     <td><%= track.title %></td>
     <td><%= track.artist_name %></td>
+    <td><%= track.genre %></td>
     <td><%= ((track.duration.to_i/60).to_s + ":" + ((track.duration.to_i%60).to_s)) %></td>
     <td><%= track.year %></td>
   </tr>

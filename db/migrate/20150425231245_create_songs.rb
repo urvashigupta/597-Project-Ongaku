@@ -9,6 +9,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :artist_name
       t.string :duration
       t.string :year
+      t.string :genre
 
       t.timestamps
     end
