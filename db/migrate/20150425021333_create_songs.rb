@@ -3,9 +3,12 @@ class CreateSongs < ActiveRecord::Migration
     create_table :songs do |t|
       t.string :track_id
       t.string :title
-      t.string :artist
-      t.string :album
-      t.string :genre
+      t.string :song_id
+      t.string :release
+      t.string :artist_id
+      t.string :artist_name
+      t.string :duration
+      t.string :year
 
       t.timestamps
     end

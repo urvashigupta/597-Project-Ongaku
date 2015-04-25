@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150420003740) do
+ActiveRecord::Schema.define(:version => 20150425021333) do
 
   create_table "signups", :force => true do |t|
     t.string   "first_name"
@@ -27,11 +27,14 @@ ActiveRecord::Schema.define(:version => 20150420003740) do
   create_table "songs", :force => true do |t|
     t.string   "track_id"
     t.string   "title"
-    t.string   "artist"
-    t.string   "album"
-    t.string   "genre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "song_id"
+    t.string   "release"
+    t.string   "artist_id"
+    t.string   "artist_name"
+    t.string   "duration"
+    t.string   "year"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

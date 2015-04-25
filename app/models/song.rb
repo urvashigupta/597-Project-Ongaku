@@ -1,5 +1,3 @@
 class Song < ActiveRecord::Base
-  attr_accessible :album, :artist, :genre, :title, :track_id
-  def change
-  end
+  attr_accessible :artist_id, :artist_name, :duration, :release, :song_id, :title, :track_id, :year
 end

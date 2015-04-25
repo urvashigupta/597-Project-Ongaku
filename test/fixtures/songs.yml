@@ -3,13 +3,19 @@
 one:
   track_id: MyString
   title: MyString
-  artist: MyString
-  album: MyString
-  genre: MyString
+  song_id: MyString
+  release: MyString
+  artist_id: MyString
+  artist_name: MyString
+  duration: MyString
+  year: MyString
 
 two:
   track_id: MyString
   title: MyString
-  artist: MyString
-  album: MyString
-  genre: MyString
+  song_id: MyString
+  release: MyString
+  artist_id: MyString
+  artist_name: MyString
+  duration: MyString
+  year: MyString
