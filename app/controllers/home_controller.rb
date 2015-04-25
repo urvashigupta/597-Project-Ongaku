@@ -1,11 +1,10 @@
 class HomeController < ApplicationController
   def index
-  	@songs = Song.all.take(10)
-	# album = Rockstar::Album.new('Carrie Underwood', 'Some Hearts', :include_info => true)
-
-	# @album_name =  "Album: #{album.name}"
-	# @album_artist =  "Artist: #{album.artist}"
-	# @album_url =  "URL: #{album.url}"
-	# @album_release_date =  "Release Date: #{album.release_date.strftime('%m/%d/%Y')}"
+  	if(params.has_key?(:home_search_songs))
+	  param_song = params[:home_search_songs][:find_songs]
+	  @songs = Song.where("title LIKE ? ", "%#{param_song}%")
+	else
+	  @songs = Song.offset(rand(Song.count)).all.take(20)
+	end
   end
 end
