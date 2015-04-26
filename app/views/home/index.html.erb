@@ -35,7 +35,7 @@
     <div id="slickgrid"></div>
 </div>
 <br/>
-<table>
+<table id ="example">
   <tr>
     <th>Title</th>
     <th>Artist Name</th>
@@ -45,14 +45,26 @@
   </tr>
   <% @songs.each do |track| %>
   <tr>
-    <td><%= track.title %></td>
-    <td><%= track.artist_name %></td>
-    <td><%= track.genre %></td>
-    <td><%= ((track.duration.to_i/60).to_s + ":" + ((track.duration.to_i%60).to_s)) %></td>
-    <td><%= track.year %></td>
+    <td class = "title"><%= track.title %></td>
+    <td class = "artist_name"><%= track.artist_name %></td>
+    <td class = "genre"><%= track.genre %></td>
+    <td class = "duration"><%= ((track.duration.to_i/60).to_s + ":" + ((track.duration.to_i%60).to_s)) %></td>
+    <td class="year"><%= track.year %></td>
   </tr>
   <%end%>
 </table>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+
+    $('#example tr').click(function() {
+        var artist_names = $(this).find(".artist_name").text();
+        var song_title = $(this).find(".title").text();
+        alert(song_title);
+    });
+
+});
+</script>
 <br/>
 <br/>
 <br/>
