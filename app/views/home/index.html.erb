@@ -35,6 +35,8 @@
     <div id="slickgrid"></div>
 </div>
 <br/>
+<% unless @songs == "" %>
+<p>Here are your songs..</p>
 <table id ="example">
   <tr>
     <th>Title</th>
@@ -76,3 +78,6 @@ $(document).ready(function() {
     </iframe>
   </div>
 </div>
+<%else%>
+<p>No songs found!</p>
+<%end%>

@@ -3,7 +3,11 @@ class HomeController < ApplicationController
   	if(params.has_key?(:home_search_songs))
   	  if params[:commit] == 'Search'
 		param_song = params[:home_search_songs][:find_songs]
-		@songs = Song.where("title LIKE ? ", "%#{param_song}%")
+		if param_song == ""
+			@songs = ""
+		else
+			@songs = Song.where("title LIKE ? ", "%#{param_song}%")
+		end
 	   elsif params[:commit] == 'Pop'
 	   	@songs = Song.where("genre = ? ", "Pop")
 	   elsif params[:commit] == 'Hip-Hop'
