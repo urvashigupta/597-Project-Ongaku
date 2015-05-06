@@ -37,6 +37,8 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem 'sass', '3.2.13'
+
 # gems shash added
 
 gem "therubyracer"

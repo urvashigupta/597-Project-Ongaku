@@ -152,7 +152,7 @@ GEM
       hpricot (>= 0.4.86)
       i18n (>= 0.5.0)
       rake (>= 0.10.0)
-    sass (3.4.13)
+    sass (3.2.13)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -211,6 +211,7 @@ DEPENDENCIES
   rails (= 3.2.21)
   rails_12factor
   rockstar (~> 0.8.1)
+  sass (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3
   test-unit
