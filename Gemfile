@@ -48,7 +48,7 @@ gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 gem 'figaro'
 
 gem 'test-unit'
-#gems for cucumber: sibi
+# gems for cucumber: sibi
 group :test, :development do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
@@ -58,6 +58,7 @@ group :test, :development do
   gem 'sqlite3'
 end
 
+#gems for heroku: urva
 group :production do
   gem 'pg'
   gem 'rails_12factor'
