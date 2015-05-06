@@ -39,6 +39,7 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'sass', '3.2.13'
+gem 'thin'
 
 # gems shash added
 
