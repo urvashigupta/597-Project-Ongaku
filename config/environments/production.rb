@@ -74,6 +74,6 @@ MusicApp::Application.configure do
     :domain         => ENV['domain'],
     :user_name      => ENV['username'],
     :password       => ENV['password'],
-    :authentication => :plain}}
+    :authentication => :plain}
 
 end
