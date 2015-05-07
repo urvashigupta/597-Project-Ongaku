@@ -43,15 +43,15 @@
     <th>Artist Name</th>
     <th>Genre</th>
     <th>Duration</th>
-    <th>Year</th>
+<!--     <th>Year</th> -->
   </tr>
   <% @songs.each do |track| %>
   <tr>
     <td class = "title"><%= track.title %></td>
     <td class = "artist_name"><%= track.artist_name %></td>
     <td class = "genre"><%= track.genre %></td>
-    <td class = "duration"><%= ((track.duration.to_i/60).to_s + ":" + ((track.duration.to_i%60).to_s)) %></td>
-    <td class="year"><%= track.year %></td>
+    <td class = "duration"><%= ((track.duration.to_i/60).to_s + ":" + (((track.duration.to_i%60)<10)? ("0"+(track.duration.to_i%60).to_s): ((track.duration.to_i%60).to_s))) %></td>
+    <!-- <td class="year"><%= track.year %></td> -->
   </tr>
   <%end%>
 </table>
@@ -62,22 +62,26 @@ $(document).ready(function() {
     $('#example tr').click(function() {
         var artist_names = $(this).find(".artist_name").text();
         var song_title = $(this).find(".title").text();
-        alert(song_title);
+        window.open("/home/index?aname="+artist_names+"&song="+song_title,"_self")
     });
-
 });
 </script>
 <br/>
 <br/>
 <br/>
 <br/>
-<div style="position:relative;width:800px;height:25px;overflow:hidden;">
-  <div style="position:absolute;top:-276px;left:-5px">
-    <iframe width="800" height="300" 
-      src="https://www.youtube.com/embed/I-SqFmhBUp4">
-    </iframe>
+<% end %>
+<% unless @youtube_id.length <= 0 %>
+  <% @src = "https://www.youtube.com/embed/" + @youtube_id + "?autoplay=1&autohide=0&controls=1&showinfo=0" %>
+  <p>Title: <%= @track.name %></p>
+  <p>Album Name: <%= /<title>([^~]+)<\/title>/.match(@track.album)[1] %></p>
+  <p>Artist Name: <%= @track.artist %></p>
+<!--  <p>Duration: <%= @track.url %></p>  -->
+  <div style="position:relative;width:800px;height:25px;overflow:hidden;">
+    <div style="position:absolute;top:-276px;left:-5px">
+      <iframe width="800" height="300" src=<%= @src %> ></iframe>
+    </div>
   </div>
-</div>
 <%else%>
 <p>No songs found!</p>
 <%end%>
