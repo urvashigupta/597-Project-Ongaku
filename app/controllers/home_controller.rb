@@ -2,6 +2,8 @@ require 'nokogiri'
 require 'open-uri'
 
 class HomeController < ApplicationController
+  # before_filter :login_required, :only => :index
+
   def index
   	@songs = ""
   	@track = ""
