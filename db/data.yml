@@ -8,6 +8,29 @@ schema_migrations:
   - - '20150507021910'
 
 ---
+signups:
+  columns:
+  - id
+  - first_name
+  - last_name
+  - email_id
+  - username
+  - password
+  - dob
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Sibi
+    - Vijaykumar
+    - sibivkumar@gmail.com
+    - sibiv
+    - anime
+    - '2015-05-07'
+    - '2015-05-07 02:32:45.797937'
+    - '2015-05-07 02:32:45.797937'
+
+---
 songs:
   columns:
   - id
