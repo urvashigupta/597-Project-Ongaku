@@ -43,10 +43,10 @@ gem 'thin'
 
 # gems shash added
 
-gem "therubyracer"
-gem "less-rails"
-gem "twitter-bootstrap-rails"
-gem "execjs"
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'execjs'
 
 # gem 'twitter-bootstrap-rails'
 gem 'coffee-script-source', '1.8.0'
