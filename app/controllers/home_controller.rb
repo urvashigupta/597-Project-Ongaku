@@ -2,7 +2,6 @@ require 'nokogiri'
 require 'open-uri'
 
 class HomeController < ApplicationController
-<<<<<<< HEAD
 	def index
 		if session[:user].nil?
 			respond_to do |format|
@@ -91,40 +90,6 @@ class HomeController < ApplicationController
 				end
 			end
 		end
-=======
-  def index
-  	if(params.has_key?(:home_search_songs))
-  	  if params[:commit] == 'Search'
-	    param_song = params[:home_search_songs][:find_songs]
-		if param_song.length > 0 
-		  @songs = Song.where("title ILIKE ? ", "%#{param_song}%")
-		else
-		  @songs = ""
-		end
-	  elsif params[:commit] == 'Pop'
-	   	@songs = Song.where("genre = ? ", "Pop")
-	  elsif params[:commit] == 'Hip-Hop'
-	   	@songs = Song.where("genre = ? ", "Hip-Hop")
-	  elsif params[:commit] == 'Rock'
-	   	@songs = Song.where("genre = ? ", "Rock")
-	  elsif params[:commit] == 'RnB'
-	   	@songs = Song.where("genre = ? ", "RnB")
-	  elsif params[:commit] == 'Alternative Rock'
-	   	@songs = Song.where("genre = ? ", "Alternative Rock")
-	  elsif params[:commit] == 'Country'
-	   	@songs = Song.where("genre = ? ", "Country")
-	  elsif params[:commit] == 'Classical'
-	   	@songs = Song.where("genre = ? ", "Classical")
-	  elsif params[:commit] == 'Jazz'
-	   	@songs = Song.where("genre = ? ", "Jazz")
-	  elsif params[:commit] == 'Reggae'
-	   	@songs = Song.where("genre = ? ", "Reggae")
-	  elsif params[:commit] == 'Blues'
-	   	@songs = Song.where("genre = ? ", "Blues")
-	  end
-	else
-	  @songs = Song.offset(rand(Song.count)).all.take(20)
->>>>>>> 3e6c823c5f1b60ed2030f9e016b474daf68d3c81
 	end
 end
 
