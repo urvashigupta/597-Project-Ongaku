@@ -1,7 +1,7 @@
 <center>
 	<h1>Login Page</h1>
 
-	<%= form_for :login_validate, :url => {:action => "validate", :id => @login} do |f| %>
+	<%= form_for :login_validate, :url => {:action => "create", :id => @login} do |f| %>
   <p>
     <%= f.label :username %><br>
     <%= f.text_field :username %>

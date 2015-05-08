@@ -1,0 +1,26 @@
+<center>
+  <div class="page-header">
+    <div class="info">
+      <h2>Change your password here!</h2>
+    </div>
+  </div>
+
+  <%= form_for :user_settings, :url => {:action => "changepassword"} do |f| %>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :current_password %>
+  </p>
+  <p>
+    <%= f.label :new_password %><br />
+    <%= f.password_field :new_password %>
+  </p>
+  <p>
+    <%= f.label :confirm_password %><br />
+    <%= f.password_field :confirm_password %>
+  </p>
+  <p>
+    <%= f.submit "Save Password" %>
+    <%= link_to "Back", home_index_path %>
+  </p>
+  <% end %>
+</center>

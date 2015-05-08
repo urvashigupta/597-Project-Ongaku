@@ -12,4 +12,19 @@ class Signup < ActiveRecord::Base
           :uniqueness => { :case_sensitive => true }
   validates :password,
           :presence => true
+  def self.authenticate(login_username, login_password)
+    if login_username.length == 0 or login_password.length == 0
+      return false
+    end
+    if(Signup.exists?(:username => login_username))
+      login_1 = Signup.where("username = ?", login_username).first
+    else
+      return false
+    end
+    if !login_1.eql? "" and login_1.password.eql? login_password
+      return true
+    else
+      return false
+    end
+  end
 end

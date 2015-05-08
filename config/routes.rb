@@ -1,4 +1,6 @@
 MusicApp::Application.routes.draw do
+  get "settings/edit"
+
   get "forgot_password/index"
 
   get "home/index"
@@ -7,7 +9,7 @@ MusicApp::Application.routes.draw do
 
 
   get "login/index"
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -16,12 +18,13 @@ MusicApp::Application.routes.draw do
   match '/register' => 'signups#new', :as => :register
   match '/home/index' => 'home#index', :as => :home_index
   match '/login/index' => 'login#index', :as => :login_index
-  match '/login/validate' => 'login#validate', :as => :login_validate
+  match '/login/create' => 'login#create', :as => :login_validate
   match '/forgot_password/index' => 'forgot_password#index', :as => :forgot_password
   match '/forgot_password/validate' => 'forgot_password#validate', :as => :forgot_password_validate
   match '/logout/index' => 'logout#index', :as => :logout_index
   match '/home/index' => 'home#search', :as => :home_search_songs
-  match '/home/play' => 'home#play', :as => :home_play_songs
+  match '/home/settings' => 'home#settings', :as => :settings
+  match '/home/change_password' => 'home#changepassword', :as => :change_password
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
