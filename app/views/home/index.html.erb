@@ -1,90 +1,87 @@
 <center>
-<div class="page-header">
-    <div class="info">
-        <h2>Enjoy the music! (<%= session[:user] %>)</h2>
+  <div class="page-header">
+    <div class="heading">
+      <h2>Enjoy the music! (<%= session[:user] %>)</h2>
     </div>
 
-     <%= form_for :home_search_songs, :url => {:action => "search"} do |f| %>
-        <p>
-          <%= f.label :find_songs %>
-          <%= f.text_field :find_songs %>
-        </p>
+    <%= form_for :home_search_songs, :url => {:action => "search"} do |f| %>
+  </div>
 
-        <%= f.submit 'Search' %>
-        <input type="reset" value="Clear">
-        <br/> <br/>
-        <p>
-          <%= f.label :search_by_genre%>
-          <%= f.submit 'Pop' %>
-          <%= f.submit 'Hip-Hop' %>
-          <%= f.submit 'Rock' %>
-          <%= f.submit 'RnB' %>
-          <%= f.submit 'Alternative Rock' %>
-          <%= f.submit 'Country' %>
-          <%= f.submit 'Classical' %>
-          <%= f.submit 'Jazz' %>
-          <%= f.submit 'Reggae' %>
-          <%= f.submit 'Blues' %>
-        </p>       
-        <%= link_to "Logout?", logout_index_path %>
-        <%= link_to "Change Password?", settings_path %>
-        <%end%>
-</div>
+  <div class="search">
+    <%= f.text_field :find_songs, :placeholder => "Search by song title"%>
 
-<div class="grid-container">
-    <div id="slickgrid"></div>
-</div>
-<br/>
-<% unless @songs.length <= 0%>
-<p>Here are your songs..</p>
-<table id ="example">
-  <tr>
-    <th>Title</th>
-    <th>Artist Name</th>
-    <th>Genre</th>
-    <th>Duration</th>
-<!--     <th>Year</th> -->
-  </tr>
-  <% @songs.each do |track| %>
-  <tr>
-    <td class = "title"><%= track.title %></td>
-    <td class = "artist_name"><%= track.artist_name %></td>
-    <td class = "genre"><%= track.genre %></td>
-    <td class = "duration"><%= ((track.duration.to_i/60).to_s + ":" + (((track.duration.to_i%60)<10)? ("0"+(track.duration.to_i%60).to_s): ((track.duration.to_i%60).to_s))) %></td>
-    <!-- <td class="year"><%= track.year %></td> -->
-  </tr>
-  <%end%>
-</table>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-$(document).ready(function() {
+    <%= f.submit 'Search', :class => "submit" %>
+    <input type="reset" value="Clear" class="submit">
+  </div>
+  <div class="logout">
+    <%= link_to "Logout?", logout_index_path %>
+    <%= link_to "Change Password?", settings_path %>
+  </div>
+  <p>
+    <%= f.label :search_by_genre%>
+    <%= f.submit 'Pop', :class => "submit" %>
+    <%= f.submit 'Hip-Hop', :class => "submit" %>
+    <%= f.submit 'Rock', :class => "submit" %>
+    <%= f.submit 'RnB', :class => "submit" %>
+    <%= f.submit 'Alternative Rock', :class => "submit" %>
+    <%= f.submit 'Country', :class => "submit" %>
+    <%= f.submit 'Classical', :class => "submit" %>
+    <%= f.submit 'Jazz', :class => "submit" %>
+    <%= f.submit 'Reggae', :class => "submit" %>
+    <%= f.submit 'Blues', :class => "submit" %>
+  </p>
+  <br/>
+  <% unless @songs.length <= 0%>
+  <p style="color:#33cc33">Here are your songs..</p>
+  <table id ="example">
+    <tr>
+      <th>Title</th>
+      <th>Artist Name</th>
+      <th>Genre</th>
+      <th>Duration</th>
+      <!--     <th>Year</th> -->
+    </tr>
+    <% @songs.each do |track| %>
+    <tr>
+      <td class = "title"><%= track.title %></td>
+      <td class = "artist_name"><%= track.artist_name %></td>
+      <td class = "genre"><%= track.genre %></td>
+      <td class = "duration"><%= ((track.duration.to_i/60).to_s + ":" + (((track.duration.to_i%60)<10)? ("0"+(track.duration.to_i%60).to_s): ((track.duration.to_i%60).to_s))) %></td>
+      <!-- <td class="year"><%= track.year %></td> -->
+    </tr>
+    <%end%>
+  </table>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
 
     $('#example tr').click(function() {
-        var artist_names = $(this).find(".artist_name").text();
-        var song_title = $(this).find(".title").text();
-        window.open("/home/index?aname="+artist_names+"&song="+song_title,"_self")
+      var artist_names = $(this).find(".artist_name").text();
+      var song_title = $(this).find(".title").text();
+      window.open("/home/index?aname="+artist_names+"&song="+song_title,"_self")
     });
-});
-</script>
-<br/>
-<br/>
-<br/>
-<br/>
-<% end %>
-<% unless @youtube_id.length <= 0 %>
-  <p>Wonderful choice!</p>
+  });
+  </script>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <% end %>
+  <% unless @youtube_id.length <= 0 %>
+  <p style="color:#33cc33">Wonderful choice!</p>
   <% @src = "https://www.youtube.com/embed/" + @youtube_id + "?autoplay=1&autohide=0&controls=1&showinfo=0" %>
-  <p>Title: <%= @track.name %></p>
-  <p>Album Name: <%= (/<title>([^~]+)<\/title>/.match(@track.album).nil?) ? "Not available" : (/<title>([^~]+)<\/title>/.match(@track.album)[1]) %></p>
-  <p>Artist Name: <%= @track.artist %></p>
-<!--  <p>Duration: <%= @track.url %></p>  -->
+  <p style="color:#33cc33">Title: <%= @track.name %></p>
+  <p style="color:#33cc33">Album Name: <%= (/<title>([^~]+)<\/title>/.match(@track.album).nil?) ? "Not available" : (/<title>([^~]+)<\/title>/.match(@track.album)[1]) %></p>
+  <p style="color:#33cc33">Artist Name: <%= @track.artist %></p>
+  <!--  <p>Duration: <%= @track.url %></p>  -->
   <div style="position:relative;width:800px;height:25px;overflow:hidden;">
     <div style="position:absolute;top:-276px;left:-5px">
       <iframe width="800" height="300" src=<%= @src %> ></iframe>
     </div>
   </div>
-<%end%>
-<% if @youtube_id.length == 0 and @songs.length <= 0%>
-<p>No songs found!</p>
-<%end%>
+  <%end%>
+  <% if @youtube_id.length == 0 and @songs.length <= 0%>
+  <p>No songs found!</p>
+  <%end%>
+  <%end%>
 </center>
