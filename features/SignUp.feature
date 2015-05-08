@@ -15,3 +15,18 @@ Feature: signup
 		Given I'm on the signup page
 		When I fill in the form and submit empty password
 		Then Signup page should have notice message
+
+	Scenario: After signing up edit user
+		Given I'm on the signup page
+		When I click the edit button
+		Then edit user page should come
+
+	Scenario: After editing user
+		Given I'm on the signup page
+		When I click the update signup button
+		Then edited user successfully page should come
+
+	Scenario: List of users
+		Given I'm on the signup page
+		When I vist the signups page
+		Then list of users page should come

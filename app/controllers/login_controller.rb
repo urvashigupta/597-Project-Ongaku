@@ -3,7 +3,7 @@ class LoginController < ApplicationController
     
   end
   
-  def validate
+  def create
   login_username = params[:login_validate][:username]
   login_password = params[:login_validate][:password]
   login_1 = ""

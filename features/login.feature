@@ -15,4 +15,9 @@ Feature: Login
 		Given I'm on the login page
 		When I fill in the form and submit the incorrect password details of the user
 		Then page should have notice message
+
+	Scenario: Blank Field
+		Given I'm on the login page
+		When I submit the form without an details
+		Then page should have field blank notice message
 		

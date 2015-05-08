@@ -69,16 +69,4 @@ class SignupsController < ApplicationController
       end
     end
   end
-
-  # DELETE /signups/1
-  # DELETE /signups/1.json
-  def destroy
-    @signup = Signup.find(params[:id])
-    @signup.destroy
-
-    respond_to do |format|
-      format.html { redirect_to signups_url }
-      format.json { head :no_content }
-    end
-  end
 end
