@@ -7,7 +7,7 @@ class ExampleMailer < ActionMailer::Base
 
 Welcome to Ongaku! 
 Your username is: ' + @user.username + '
-To login please go to: http://localhost:3000/
+To login please go to: https://cryptic-wave-8589.herokuapp.com/
 
 
 Thank you for signing up!
@@ -27,7 +27,7 @@ def forgot_pwd(user)
 Your username is: ' + @user.username + '
 Your password is: ' + @user.password + '
 Please change your password as soon as possible. 
-To login please go to: http://localhost:3000/
+To login please go to: https://cryptic-wave-8589.herokuapp.com/
 
 
 Thank you!
