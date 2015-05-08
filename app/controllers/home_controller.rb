@@ -18,7 +18,7 @@ class HomeController < ApplicationController
 					if param_song == ""
 						@songs = ""
 					else
-						@songs = Song.where("title LIKE ? ", "%#{param_song}%")
+						@songs = Song.where("title ILIKE ? ", "%#{param_song}%")
 					end
 				elsif params[:commit] == 'Pop'
 					@songs = Song.where("genre = ? ", "Pop")

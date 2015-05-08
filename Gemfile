@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 
+ruby '2.2.1'
 gem 'rails', '3.2.21'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -15,7 +16,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -37,8 +38,17 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem 'sass', '3.2.13'
+gem 'thin'
+
 # gems shash added
-gem 'twitter-bootstrap-rails'
+
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+gem "execjs"
+
+# gem 'twitter-bootstrap-rails'
 gem 'coffee-script-source', '1.8.0'
 gem 'yaml_db_with_schema_tables'
 gem 'rockstar', '~> 0.8.1'
@@ -48,12 +58,18 @@ gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 gem 'figaro'
 
 gem 'test-unit'
-#gems for cucumber: sibi
+# gems for cucumber: sibi
 group :test, :development do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'launchy'
-  gem 'simplecov'
+  gem 'sqlite3'
+end
+
+#gems for heroku: urva
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
