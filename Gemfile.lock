@@ -214,6 +214,7 @@ DEPENDENCIES
   launchy
   less-rails
   mailgun-ruby (~> 1.0.2)
+  nokogiri
   pg
   rails (= 3.2.21)
   rails_12factor
