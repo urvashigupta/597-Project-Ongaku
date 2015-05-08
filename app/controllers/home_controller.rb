@@ -60,7 +60,6 @@ class HomeController < ApplicationController
 				@songs = Song.offset(rand(Song.count)).all.take(20)
 			end
 		end
-
 	end
 	def settings
 		

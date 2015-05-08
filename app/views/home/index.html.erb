@@ -25,9 +25,7 @@
           <%= f.submit 'Jazz' %>
           <%= f.submit 'Reggae' %>
           <%= f.submit 'Blues' %>
-        </p>
-
-        
+        </p>       
         <%= link_to "Logout?", logout_index_path %>
         <%= link_to "Change Password?", settings_path %>
         <%end%>
@@ -37,7 +35,7 @@
     <div id="slickgrid"></div>
 </div>
 <br/>
-<% unless @songs == "" %>
+<% unless @songs.length <= 0%>
 <p>Here are your songs..</p>
 <table id ="example">
   <tr>
@@ -74,9 +72,10 @@ $(document).ready(function() {
 <br/>
 <% end %>
 <% unless @youtube_id.length <= 0 %>
+  <p>Wonderful choice!</p>
   <% @src = "https://www.youtube.com/embed/" + @youtube_id + "?autoplay=1&autohide=0&controls=1&showinfo=0" %>
   <p>Title: <%= @track.name %></p>
-  <p>Album Name: <%= /<title>([^~]+)<\/title>/.match(@track.album)[1] %></p>
+  <p>Album Name: <%= (/<title>([^~]+)<\/title>/.match(@track.album).nil?) ? "Not available" : (/<title>([^~]+)<\/title>/.match(@track.album)[1]) %></p>
   <p>Artist Name: <%= @track.artist %></p>
 <!--  <p>Duration: <%= @track.url %></p>  -->
   <div style="position:relative;width:800px;height:25px;overflow:hidden;">
@@ -84,7 +83,8 @@ $(document).ready(function() {
       <iframe width="800" height="300" src=<%= @src %> ></iframe>
     </div>
   </div>
-<%else%>
+<%end%>
+<% if @youtube_id.length == 0 and @songs.length <= 0%>
 <p>No songs found!</p>
 <%end%>
 </center>
