@@ -56,22 +56,5 @@ class HomeController < ApplicationController
 	  @songs = Song.offset(rand(Song.count)).all.take(20)
 	end
   end
-
-  def play
-  	@artist_name = params[:aname]
-    @song_title = params[:song]
-    @track = Rockstar::Track.new(@artist_name, @song_title, :include_info => true)
-    # @track_id = "I-SqFmhBUp4"
-
-    respond_to do |format|
-	  if @track.url.length > 0
-	    format.html { redirect_to home_index_path, notice: "#{@track.url}" }
-		format.json { render json: @track, status: :created, location: home_index_path }
-	  else
-	    format.html { redirect_to home_index_path, notice: 'Nothing at all' }
-		format.json { render json: @track, status: :created, location: home_index_path }
-	  end  
-    end
-  end
 end
 

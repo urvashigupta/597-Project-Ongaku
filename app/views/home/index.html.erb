@@ -24,9 +24,7 @@
           <%= f.submit 'Jazz' %>
           <%= f.submit 'Reggae' %>
           <%= f.submit 'Blues' %>
-        </p>
-
-        
+        </p>       
         <%= link_to "Logout?", logout_index_path %>
         <%end%>
 </div>
@@ -36,7 +34,7 @@
 </div>
 <br/>
 <% unless @songs.length <= 0%>
-<p>Here are your songs..<%= @songs%></p>
+<p>Here are your songs..</p>
 <table id ="example">
   <tr>
     <th>Title</th>
@@ -75,7 +73,7 @@ $(document).ready(function() {
   <p>Wonderful choice!</p>
   <% @src = "https://www.youtube.com/embed/" + @youtube_id + "?autoplay=1&autohide=0&controls=1&showinfo=0" %>
   <p>Title: <%= @track.name %></p>
-  <p>Album Name: <%= /<title>([^~]+)<\/title>/.match(@track.album)[1] %></p>
+  <p>Album Name: <%= (/<title>([^~]+)<\/title>/.match(@track.album).nil?) ? "Not available" : (/<title>([^~]+)<\/title>/.match(@track.album)[1]) %></p>
   <p>Artist Name: <%= @track.artist %></p>
 <!--  <p>Duration: <%= @track.url %></p>  -->
   <div style="position:relative;width:800px;height:25px;overflow:hidden;">
